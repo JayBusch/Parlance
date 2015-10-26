@@ -692,19 +692,19 @@ if __name__ == "__main__":
      address = 'localhost'
      port = 12345
      
-     if(args.tests != None):
-          unittest.TextTestRunner().run(suite())
-     else:
-          if(args.cpus != None):
-               cpus = int(args.cpus)
-          if(args.address != None):
-               address = args.address
-          if(args.port != None):
-               port = int(args.port)
-          if(args.mpdebug != None):
-               logger = multiprocessing.log_to_stderr()
-               logger.setLevel(multiprocessing.SUBDEBUG)
+     #if(args.tests != None):
+     #     unittest.TextTestRunner().run(suite())
+     #else:
+     if(args.cpus != None):
+          cpus = int(args.cpus)
+     if(args.address != None):
+          address = args.address
+     if(args.port != None):
+          port = int(args.port)
+     if(args.mpdebug != None):
+          logger = multiprocessing.log_to_stderr()
+          logger.setLevel(multiprocessing.SUBDEBUG)
 
-          parlanceServer = ParlanceServer((address, port), cpus)
-          parlanceServer.serve_forever()    
+     parlanceServer = ParlanceServer((address, port), cpus)
+     parlanceServer.serve_forever()    
 # Main\ Application/Module\ Entrypoint:1 ends here
